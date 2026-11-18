@@ -394,6 +394,16 @@ footer a{text-decoration:none;color:var(--neon)}
 body.pm-open{overflow:hidden}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1!important;transform:none!important}}
 @media print{.bar,.top,.agent,.rail,.pager,.steprail,.snext,.console,.hero .btns,.fx,#prog{display:none!important}body{padding:0}body::before,body::after{display:none}main>section[hidden]{display:block!important}.rv{opacity:1!important;transform:none!important}}
+
+/* Topic illustrations: shared artwork, localised accessible captions. */
+.guide-visual{width:100%;max-width:620px;margin:22px auto 26px;overflow:hidden;border:1px solid var(--line);border-radius:16px;background:var(--surface)}
+.guide-visual img{display:block;width:100%;height:auto;aspect-ratio:3/2}
+.guide-visual figcaption{padding:10px 14px;color:var(--muted);font-size:.88rem;line-height:1.45}
+.guide-visual small{display:block;margin-top:5px;font-size:.76rem;line-height:1.45}
+.hero .guide-visual{max-width:560px;margin:22px 0;background:#0e1a2d;border-color:rgba(125,211,252,.25)}
+.hero .guide-visual img{aspect-ratio:16/9;object-fit:cover;object-position:center 44%}
+.hero .guide-visual figcaption{color:#d4dfec}
+@media(max-width:600px){.guide-visual{margin:18px auto 22px;border-radius:12px}.guide-visual figcaption{padding:9px 12px}.hero .guide-visual{margin:18px 0}}
 </style>
 </head>
 <body>
@@ -445,6 +455,10 @@ body.pm-open{overflow:hidden}
   <div class="wrap">
    <span class="ai-badge" aria-hidden="true"><i></i>AGENTIC AI POWERED DATA</span><span class="kicker"><span class="dot" aria-hidden="true"></span>Free guide for first-time buyers</span>
    <h1>Buying an auction property for the first time? <em>Here is the process, A to Z.</em></h1>
+   <figure class="guide-visual">
+    <img src="../images/01-pembukaan-1200.webp" srcset="../images/01-pembukaan-640.webp 640w, ../images/01-pembukaan-1200.webp 1200w" sizes="(max-width:600px) calc(100vw - 34px), 560px" width="1200" height="800" loading="eager" fetchpriority="high" decoding="async" alt="A couple discusses a terrace house with an adviser outside its gate.">
+    <figcaption>Understand the process before deciding.<small>AI illustrations; not photographs of actual properties or clients.</small></figcaption>
+   </figure>
    <div class="vids" aria-label="Auction process videos"><span class="lbl">Start here: watch these two videos first</span>
    <div class="vid-grid">
     <figure class="vid"><a class="vid-play" href="https://www.youtube.com/watch?v=bvrJiOuBoLs" target="_blank" rel="noopener" data-yt="bvrJiOuBoLs" aria-label="Play video: when there is more than one bidder"><img src="https://i.ytimg.com/vi/bvrJiOuBoLs/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="vid-btn" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4.5v15L19.5 12z"/></svg></span></a><figcaption><b>When there is more than one bidder</b></figcaption></figure>
@@ -491,6 +505,10 @@ body.pm-open{overflow:hidden}
    <span class="eyebrow">Start here</span>
    <h2>What is an auction property?</h2>
    <p class="lead">An auction property is a home sold at an open auction by a bank. It is usually auctioned because the current owner has failed to pay the bank's monthly instalments for several months, so the bank sells it to recover what is still owed on the loan.</p>
+   <figure class="guide-visual">
+    <img src="../images/02-apa-itu-lelong-1200.webp" srcset="../images/02-apa-itu-lelong-640.webp 640w, ../images/02-apa-itu-lelong-1200.webp 1200w" sizes="(max-width:600px) calc(100vw - 34px), 620px" width="1200" height="800" loading="lazy" decoding="async" alt="A buyer and adviser view a laptop beside a house model, folder and small auction gavel.">
+    <figcaption>Understand the property, documents and auction process.</figcaption>
+   </figure>
    <div class="cards">
     <div class="card"><svg class="ic" width="24" height="24" aria-hidden="true"><use href="#i-bank"/></svg><h3>Why is it auctioned?</h3><p>When the owner misses the monthly instalments for several months, the bank may sell the home at auction to cover what is still owed. The starting price, the reserve price, is set by the bank.</p></div>
     <div class="card"><svg class="ic" width="24" height="24" aria-hidden="true"><use href="#i-rm"/></svg><h3>Why are there still few buyers?</h3><p>To qualify for the auction, a buyer needs a 10% deposit. Most buyers cannot easily set this aside, so there is little competition. That is the opening for buyers who can.</p></div>
@@ -504,6 +522,10 @@ body.pm-open{overflow:hidden}
    <span class="eyebrow">Why it pays</span>
    <h2>The advantages of buying at auction</h2>
    <p class="lead">An auction property is not only cheap. Bought the right way, it can bring in a high return every month.</p>
+   <figure class="guide-visual">
+    <img src="../images/03-kelebihan-1200.webp" srcset="../images/03-kelebihan-640.webp 640w, ../images/03-kelebihan-1200.webp 1200w" sizes="(max-width:600px) calc(100vw - 34px), 620px" width="1200" height="800" loading="lazy" decoding="async" alt="A couple discusses a modest, comfortable apartment living room.">
+    <figcaption>Assess the property&#x27;s potential and actual condition.</figcaption>
+   </figure>
    <div class="cards">
     <div class="card"><svg class="ic" width="24" height="24" aria-hidden="true"><use href="#i-rm"/></svg><h3>Buy below market value</h3><p>The reserve price is often well below market value, especially after the first auction finds no buyer. You start with a gain on day one.</p></div>
     <div class="card"><svg class="ic" width="24" height="24" aria-hidden="true"><use href="#i-calc"/></svg><h3>High ROI, rent covers the instalment</h3><p>Because the price is low, the monthly rent is often enough, or more than enough, to cover the bank's monthly instalment. Most bank auction units can bring in extra cash flow.</p></div>
@@ -516,6 +538,10 @@ body.pm-open{overflow:hidden}
    <span class="eyebrow">Before you bid</span>
    <h2>Getting ready before you buy</h2>
    <p class="lead">An auction property is one of the investments with the highest returns, but it comes with its own risks. The right preparation is your best protection.</p>
+   <figure class="guide-visual">
+    <img src="../images/04-persediaan-1200.webp" srcset="../images/04-persediaan-640.webp 640w, ../images/04-persediaan-1200.webp 1200w" sizes="(max-width:600px) calc(100vw - 34px), 620px" width="1200" height="800" loading="lazy" decoding="async" alt="Two buyers review a preparation checklist with an adviser, a calculator and document folders.">
+    <figcaption>Review your budget, eligibility and documents before bidding.</figcaption>
+   </figure>
    <div class="cards">
     <div class="card"><svg class="ic" width="24" height="24" aria-hidden="true"><use href="#i-bank"/></svg><h3>Check your loan eligibility first</h3><p>Before you bid, check your loan eligibility with a bank. Ask your agent: the agent has a banker and a lawyer who are experienced in auction deals.</p></div>
     <div class="card"><svg class="ic" width="24" height="24" aria-hidden="true"><use href="#i-people"/></svg><h3>Choose an experienced team</h3><p>The agent, the lawyer and the banker each bring their own expertise to help you before you decide. Choosing a team experienced in auctions matters a great deal.</p></div>
@@ -529,6 +555,10 @@ body.pm-open{overflow:hidden}
    <span class="eyebrow">Not just the deposit</span>
    <h2>Be ready for the previous owner's arrears too</h2>
    <p class="lead">Besides the 10% deposit, the buyer must also be ready to pay all of the previous owner's arrears after winning the auction, usually once the loan is approved. The arrears that usually need paying:</p>
+   <figure class="guide-visual">
+    <img src="../images/05-tunggakan-1200.webp" srcset="../images/05-tunggakan-640.webp 640w, ../images/05-tunggakan-1200.webp 1200w" sizes="(max-width:600px) calc(100vw - 34px), 620px" width="1200" height="800" loading="lazy" decoding="async" alt="Six illustrated cost categories: maintenance, land tax, assessment tax, sewerage, water and developer charges.">
+    <figcaption>Check costs and obligations against the property&#x27;s auction documents.</figcaption>
+   </figure>
    <div class="cards">
     <div class="card"><svg class="ic" width="24" height="24" aria-hidden="true"><use href="#i-doc"/></svg><h3>a. Maintenance fee</h3><p>Owed to the building management body.</p></div>
     <div class="card"><svg class="ic" width="24" height="24" aria-hidden="true"><use href="#i-doc"/></svg><h3>b. Quit rent</h3><p>Owed to the land office.</p></div>
@@ -545,6 +575,10 @@ body.pm-open{overflow:hidden}
    <span class="eyebrow">Once you are ready</span>
    <h2>Register for the auction through a bank panel agent</h2>
    <p class="lead">Once your loan eligibility is checked and the arrears are counted, you can go ahead and register for the auction.</p>
+   <figure class="guide-visual">
+    <img src="../images/06-pendaftaran-1200.webp" srcset="../images/06-pendaftaran-640.webp 640w, ../images/06-pendaftaran-1200.webp 1200w" sizes="(max-width:600px) calc(100vw - 34px), 620px" width="1200" height="800" loading="lazy" decoding="async" alt="An adviser guides a buyer through a registration form on a laptop.">
+    <figcaption>Get guidance on preparing your auction registration.</figcaption>
+   </figure>
    <div class="cards">
     <div class="card"><svg class="ic" width="24" height="24" aria-hidden="true"><use href="#i-gavel"/></svg><h3>Register through a bank panel agent</h3><p>Registration should go through an appointed bank panel agent, so that the agent can give you an A to Z service until everything is done.</p></div>
     <div class="card"><svg class="ic" width="24" height="24" aria-hidden="true"><use href="#i-check"/></svg><h3>An A to Z service</h3><p>From the POS and loan checks, registration and auction day, to the change of name and getting the keys: your agent is with you until everything is done.</p></div>
