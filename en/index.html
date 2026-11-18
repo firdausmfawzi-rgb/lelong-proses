@@ -767,7 +767,7 @@ body.pm-open{overflow:hidden}
 <script>
 (function(){   // Premium code pop-up (Jay 19/11/2026): the shared Premium code of the owner's site, from the portal; it must be copied first
  var D=document,$=function(id){return D.getElementById(id)},cta=$('cta'),pm=$('pm');if(!cta||!pm)return;
- var P={"copied": "✓ Code copied", "after": "The code is copied. On the list site, press I have an access code and paste this code.", "until": "Valid until {d}", "fail": "The code could not be copied yet. Press and hold the code to copy it, then press Copy the code again."},LANG='en',CLIENT='https://client.lelongbidgroup.com/?dari=proses&lang='+LANG,code='',copied=false;
+ var P={"copied": "✓ Code copied", "after": "The code is copied. On the list site, press I have an access code and paste this code.", "until": "Valid until {d}", "fail": "The code could not be copied yet. Press and hold the code to copy it, then press Copy the code again."},LANG='en',CLIENT='https://client.lelongbidgroup.com/?dari=proses&lang='+LANG+'&t='+Date.now().toString(36),code='',copied=false;
  var MON=['January','February','March','April','May','June','July','August','September','October','November','December'];
  var go=$('pm-go'),cp=$('pm-copy'),hint=$('pm-hint');
  function nice(d){var m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(d||'');return m?Number(m[3])+' '+MON[Number(m[2])-1]+' '+m[1]:d}

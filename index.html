@@ -767,7 +767,7 @@ body.pm-open{overflow:hidden}
 <script>
 (function(){   // Premium code pop-up (Jay 19/11/2026): the shared Premium code of the owner's site, from the portal; it must be copied first
  var D=document,$=function(id){return D.getElementById(id)},cta=$('cta'),pm=$('pm');if(!cta||!pm)return;
- var P={"copied": "✓ Kod disalin", "after": "Kod sudah disalin. Di laman senarai, tekan I have an access code dan tampal kod ini.", "until": "Sah sehingga {d}", "fail": "Kod belum dapat disalin. Tekan dan tahan pada kod untuk menyalinnya, kemudian tekan Salin kod sekali lagi."},LANG='ms',CLIENT='https://client.lelongbidgroup.com/?dari=proses&lang='+LANG,code='',copied=false;
+ var P={"copied": "✓ Kod disalin", "after": "Kod sudah disalin. Di laman senarai, tekan I have an access code dan tampal kod ini.", "until": "Sah sehingga {d}", "fail": "Kod belum dapat disalin. Tekan dan tahan pada kod untuk menyalinnya, kemudian tekan Salin kod sekali lagi."},LANG='ms',CLIENT='https://client.lelongbidgroup.com/?dari=proses&lang='+LANG+'&t='+Date.now().toString(36),code='',copied=false;
  var MON=['Januari','Februari','Mac','April','Mei','Jun','Julai','Ogos','September','Oktober','November','Disember'];
  var go=$('pm-go'),cp=$('pm-copy'),hint=$('pm-hint');
  function nice(d){var m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(d||'');return m?Number(m[3])+' '+MON[Number(m[2])-1]+' '+m[1]:d}
