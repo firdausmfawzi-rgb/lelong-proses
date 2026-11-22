@@ -14,18 +14,19 @@
 <meta property="og:image" content="https://lelongbidgroup.com/img/og-lelong.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#050b16">
-<link rel="alternate" hreflang="ms" href="https://proses.lelongbidgroup.com/"><link rel="alternate" hreflang="en" href="https://proses.lelongbidgroup.com/en/"><link rel="alternate" hreflang="x-default" href="https://proses.lelongbidgroup.com/">
+<link rel="alternate" hreflang="ms" href="https://proses.lelongbidgroup.com/"><link rel="alternate" hreflang="en" href="https://proses.lelongbidgroup.com/en/"><link rel="alternate" hreflang="x-default" href="https://proses.lelongbidgroup.com/en/">
 <script>
-/* before paint: the theme the reader chose (proses.theme), and the language they chose last time (proses.lang) */
+/* before paint: the theme the reader chose (proses.theme), and the language they chose last time (proses.lang).
+   owner 22/11/2026: English is the default view; a reader who has not chosen a language gets the English page. */
 (function(){try{var t=localStorage.getItem('proses.theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);
- var l=localStorage.getItem('proses.lang'),here=document.documentElement.lang;if(l&&l!==here&&(l==='en'||l==='ms'))location.replace(here==='ms'?'en/':'../')}catch(e){}})();
+ var l=localStorage.getItem('proses.lang')||'en',here=document.documentElement.lang;if(l&&l!==here&&(l==='en'||l==='ms'))location.replace(here==='ms'?'en/':'../')}catch(e){}})();
 </script>
 <link rel="icon" href="https://lelongbidgroup.com/img/icon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="https://lelongbidgroup.com/img/icon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@400;600;700&display=swap">
 <style>
-/* proses.lelongbidgroup.com, look v2 (16/11/2026): the agentic look of the main site (deep navy, neon cyan + violet, gold accents, grid,
+/* proses.lelongbidgroup.com, look v2 (16/11/2026): the look of the main site (deep navy, neon cyan + violet, gold accents, grid,
    Space Grotesk + IBM Plex Sans, mono labels). Dark by default; the reader can switch to light (proses.theme). Phone first.
    The words of the guide are unchanged. With script: a topic console, one topic on screen at a time (or all on one page), a step rail,
    reveal transitions, a typed status line and a small network canvas in the hero. Without script every section simply shows.
@@ -118,8 +119,8 @@ tr.rv{transform:none}
 .hero .fx{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
 .hero .wrap{position:relative;max-width:980px}
 .hero .wrap>*{animation:fadeUp .7s cubic-bezier(.2,.7,.2,1) both}.hero .wrap>*:nth-child(3){animation-delay:.08s}.hero .wrap>*:nth-child(4){animation-delay:.16s}.hero .wrap>*:nth-child(5){animation-delay:.24s}.hero .wrap>*:nth-child(6){animation-delay:.32s}.hero .wrap>*:nth-child(7){animation-delay:.4s}
-.ai-badge{display:inline-flex;align-items:center;gap:9px;vertical-align:top;font:800 .66rem/1 var(--mono);letter-spacing:.2em;color:#a8f5ff;background:rgba(3,10,22,.78);border:1px solid rgba(34,211,238,.6);padding:10px 12px;border-radius:9px;margin:0 10px 12px 0;box-shadow:0 0 0 1px rgba(139,92,246,.4),0 0 24px -4px rgba(34,211,238,.75),inset 0 0 16px rgba(34,211,238,.14)}
-.ai-badge i{width:8px;height:12px;background:var(--gold2);box-shadow:0 0 10px var(--gold2);animation:blink 1.1s steps(2) infinite}
+.src-badge{display:inline-flex;align-items:center;gap:9px;vertical-align:top;font:800 .66rem/1 var(--mono);letter-spacing:.2em;color:#a8f5ff;background:rgba(3,10,22,.78);border:1px solid rgba(34,211,238,.6);padding:10px 12px;border-radius:9px;margin:0 10px 12px 0;box-shadow:0 0 0 1px rgba(139,92,246,.4),0 0 24px -4px rgba(34,211,238,.75),inset 0 0 16px rgba(34,211,238,.14)}
+.src-badge i{width:8px;height:12px;background:var(--gold2);box-shadow:0 0 10px var(--gold2);animation:blink 1.1s steps(2) infinite}
 .hero .kicker{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.22);color:#fff;padding:7px 12px;border-radius:999px;font-size:.84rem;font-weight:600;margin-bottom:18px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
 .hero .kicker .dot{width:8px;height:8px;border-radius:50%;background:var(--neon3);animation:ping 1.8s ease-out infinite}
 .hero h1{font-size:clamp(2rem,6.6vw,3.5rem);max-width:17ch;text-wrap:balance;text-shadow:0 2px 30px rgba(5,11,22,.6)}
@@ -446,13 +447,13 @@ body.pm-open{overflow:hidden}
   </div>
  </div>
 </header>
-<div class="agent" aria-hidden="true"><div class="wrap"><span class="ag-dot"></span><span class="ag-k">AI AGENT</span><span class="ag-t" id="ag-t"></span></div></div>
+<div class="agent" aria-hidden="true"><div class="wrap"><span class="ag-dot"></span><span class="ag-k">AUCTION GUIDE</span><span class="ag-t" id="ag-t"></span></div></div>
 
 <main id="atas">
  <section class="hero">
   <canvas class="fx" id="fx" aria-hidden="true"></canvas>
   <div class="wrap">
-   <span class="ai-badge" aria-hidden="true"><i></i>AGENTIC AI POWERED DATA</span><span class="kicker"><span class="dot" aria-hidden="true"></span>Free guide for first-time buyers</span>
+   <span class="src-badge" aria-hidden="true"><i></i>FROM OFFICIAL AUCTION NOTICES</span><span class="kicker"><span class="dot" aria-hidden="true"></span>Free guide for first-time buyers</span>
    <h1>Buying an auction property for the first time? <em>Here is the process, A to Z.</em></h1>
    <figure class="guide-visual">
     <img src="../images/01-pembukaan-jay-v2-1200.webp" srcset="../images/01-pembukaan-jay-v2-640.webp 640w, ../images/01-pembukaan-jay-v2-1200.webp 1200w" sizes="(max-width:600px) calc(100vw - 34px), 560px" width="1200" height="800" loading="eager" fetchpriority="high" decoding="async" alt="Firdaus Jay explains a terrace house to a couple outside its gate.">
@@ -641,7 +642,7 @@ body.pm-open{overflow:hidden}
   months:['January','February','March','April','May','June','July','August','September','October','November','December'],
   topics:'Parts',steps:'Ten steps',step:'Step',prev:'Previous',next:'Next',done:'See real auction properties',stepNext:'Go to step {n}',stepDone:'See the full example in ringgit',
   prog:'{a}/{b} parts read',modeAll:'Show all parts on one page',modeTopic:'Back to one part per screen',
-  lines:['Laying out the auction property guide', 'Five parts, from the basics to registering', 'Pick a part below and read one at a time', 'A Premium code waits for you at the end'],
+  lines:['Bank auction property, explained step by step', 'Five parts, from the basics to registering', 'Pick a part below and read one at a time', 'A Premium code waits for you at the end'],
   lineN:'Checking the list: {n} units open for bidding today'};
  var BULAN=T.months;
  var RM=!!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches),IO='IntersectionObserver' in window;
