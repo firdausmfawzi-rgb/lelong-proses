@@ -404,6 +404,47 @@ body.pm-open{overflow:hidden}
 .hero .guide-visual img{aspect-ratio:16/9;object-fit:cover;object-position:center 44%}
 .hero .guide-visual figcaption{color:#d4dfec}
 @media(max-width:600px){.guide-visual{margin:18px auto 22px;border-radius:12px}.guide-visual figcaption{padding:9px 12px}.hero .guide-visual{margin:18px 0}}
+/* cinematic opening (24/11/2026, the Penthouse Rain look Jay picked): a rainy harbour skyline in three layers (back sky, mid city,
+   front man at a glass railing) that drift apart while the big word rises; the word sits between the sky and the city, so the
+   towers touch its feet and the man's head overlaps it. Light: no doors and no tilt video, only three images (~0.3 MB on a phone).
+   Rain video on wide desktop screens only. Without script, or with reduced motion, it simply shows the final frame. */
+.cine{position:relative;height:calc(100svh - var(--top) - 35px);min-height:420px;max-height:1000px;overflow:hidden;isolation:isolate;background:#0d0a22;container-type:size;color:#fff;border-bottom:1px solid rgba(125,211,252,.2)}
+.cine.tall{height:calc(78svh - var(--top) - 35px);min-height:440px}
+.cine-stage{position:absolute;left:50%;top:50%;width:max(100cqw,177.78cqh);aspect-ratio:16/9;transform:translate(-50%,-50%);pointer-events:none}
+.cine-l{position:absolute;inset:0}
+.cine-l>img,.cine-l>video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cine-back{transform-origin:50% 40%}
+.cine-mid{transform-origin:50% 45%;z-index:2}
+.cine-front{transform-origin:50% 100%;z-index:3}
+.cine-shade{position:absolute;left:0;right:0;top:0;height:45%;background:linear-gradient(rgba(13,8,40,.45),transparent)}
+.cine-rain{opacity:0;transition:opacity .7s linear}.cine-rain.on{opacity:1}
+.cine-glass{position:absolute;left:5.2%;right:4.1%;top:57.9%;height:25.4%;background:linear-gradient(rgba(190,200,255,.1),rgba(150,160,230,.05) 60%,rgba(120,130,210,.08));-webkit-backdrop-filter:blur(1.2px) saturate(1.05);backdrop-filter:blur(1.2px) saturate(1.05);border-top:1px solid rgba(255,255,255,.18)}
+.cine-head{position:absolute;left:0;right:0;bottom:57%;z-index:1;text-align:center;font-family:var(--display);color:#fff}
+.cine.tall .cine-head{bottom:63.8%}
+.cine-kick{display:block;font:400 calc(var(--cfs,min(15cqw,28cqh))*.118)/1.1 var(--sans);letter-spacing:-.01em;margin:0 0 calc(var(--cfs,min(15cqw,28cqh))*.04);transform:translateX(-.1em);text-shadow:0 2px 18px rgba(13,8,40,.5)}
+.cine-word{display:inline-block;font-size:var(--cfs,min(15cqw,28cqh));font-weight:700;line-height:.76;letter-spacing:-.045em;white-space:nowrap;text-shadow:0 6px 40px rgba(13,8,40,.35)}
+.cine-word>span{display:inline-block}
+.cine-go{position:absolute;left:50%;bottom:max(18px,env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:5;display:inline-flex;align-items:center;gap:8px;height:46px;padding:0 24px;border-radius:999px;background:#f2b8c0;color:#180f3c;font:700 .98rem/1 var(--sans);text-decoration:none;white-space:nowrap;box-shadow:0 12px 30px -10px rgba(0,0,0,.6);transition:background .25s,transform .25s}
+.cine-go:hover{background:#f7c9d0;transform:translateX(-50%) translateY(-1px)}
+.cine-go .ic{transform:rotate(90deg)}
+.cine.wait .cine-word>span,.cine.wait .cine-kick,.cine.wait .cine-shade{opacity:0}
+.cine.wait .cine-front{transform:translateY(66%)}
+.cine.go .cine-word>span{animation:cLet .7s cubic-bezier(.2,.65,.3,1) both;animation-delay:calc(.15s + var(--i)*.054s)}
+.cine.go .cine-kick{animation:cKick .65s cubic-bezier(.2,.65,.3,1) .15s both}
+.cine.go .cine-shade{animation:cFade .8s ease-in-out .5s both}
+.cine.go .cine-back{animation:cBack 1.4s cubic-bezier(.45,0,.35,1) .45s both}
+.cine.go .cine-mid{animation:cMid 4s linear .45s both}
+.cine.go .cine-head{animation:cHead 1.8s cubic-bezier(.3,0,.4,1) .55s both}
+.cine.go .cine-front{animation:cFront 3.95s linear .9s both}
+@keyframes cLet{from{opacity:0;transform:translateY(.14em)}to{opacity:1;transform:none}}
+@keyframes cKick{from{opacity:0;transform:translate(-.1em,.5em)}to{opacity:1;transform:translateX(-.1em)}}
+@keyframes cFade{from{opacity:0}to{opacity:1}}
+@keyframes cBack{from{transform:none}to{transform:translateY(-1.5%)}}
+@keyframes cMid{0%{transform:none;animation-timing-function:cubic-bezier(.45,0,.3,1)}35%{transform:translateY(-4%)}42.5%{transform:translateY(-4%);animation-timing-function:cubic-bezier(.45,0,.55,1)}100%{transform:none}}
+@keyframes cHead{from{transform:translateY(6%)}to{transform:none}}
+@keyframes cFront{0%{transform:translateY(66%);animation-timing-function:cubic-bezier(.2,.5,.2,1)}67%{transform:translateY(-2.5%);animation-timing-function:cubic-bezier(.45,0,.55,1)}100%{transform:none}}
+@media (max-width:420px){.cine-go{height:44px;padding:0 20px;font-size:.92rem}}
+@media (prefers-reduced-motion:reduce){.cine .cine-front,.cine .cine-word>span,.cine .cine-kick,.cine .cine-shade{opacity:1!important;transform:none!important}}
 </style>
 </head>
 <body>
@@ -450,6 +491,45 @@ body.pm-open{overflow:hidden}
 <div class="agent" aria-hidden="true"><div class="wrap"><span class="ag-dot"></span><span class="ag-k">PANDUAN LELONG</span><span class="ag-t" id="ag-t"></span></div></div>
 
 <main id="atas">
+ <div class="cine" id="cine">
+  <div class="cine-stage" aria-hidden="true">
+   <div class="cine-l cine-back"><img src="images/cine-back-2000.webp" srcset="images/cine-back-1000.webp 1000w, images/cine-back-2000.webp 2000w" sizes="(orientation:portrait) 140vh, 100vw" width="2000" height="1131" alt="" decoding="async" fetchpriority="high"><div class="cine-shade"></div></div>
+   <div class="cine-head"><span class="cine-kick">Proses rumah</span><span class="cine-word">Lelong</span></div>
+   <div class="cine-l cine-mid"><img src="images/cine-city-2000.webp" srcset="images/cine-city-1000.webp 1000w, images/cine-city-2000.webp 2000w" sizes="(orientation:portrait) 140vh, 100vw" width="2000" height="1131" alt="" decoding="async"></div>
+   <div class="cine-l cine-front"><div class="cine-glass"></div><img src="images/cine-front-2000.webp" srcset="images/cine-front-1000.webp 1000w, images/cine-front-2000.webp 2000w" sizes="(orientation:portrait) 140vh, 100vw" width="2000" height="1131" alt="" decoding="async"></div>
+  </div>
+  <a class="cine-go" href="#mula" aria-label="Mula di sini: panduan proses rumah lelong">Mula di sini<svg class="ic" width="24" height="24" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+ </div>
+<script>
+/* the cinematic opening: size the big word to the scene, play the reveal once the three images are in (or after 3 s), and on wide
+   desktop screens only, loop the rain video (two copies crossfading over the first 3.6 s, so the loop never shows a seam) */
+(function(){var c=document.getElementById('cine');if(!c)return;
+ var w=c.querySelector('.cine-word'),rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ function fit(){var W=c.clientWidth,tall=window.innerHeight>1.2*W;c.classList.toggle('tall',tall);var H=c.clientHeight,sw=Math.max(W,H*16/9),sh=sw*9/16,base=(H-sh)/2+sh*(tall?.362:.43);
+  c.style.setProperty('--cfs','100px');var pe=w.getBoundingClientRect().width/100;if(!pe)return;
+  c.style.setProperty('--cfs',Math.max(40,Math.min(.625*sw/pe,.92*W/pe,(base-.05*H)/.92))+'px')}
+ fit();addEventListener('resize',fit);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);
+ if(rm)return;
+ var tx=w.textContent;w.textContent='';for(var q=0;q<tx.length;q++){var s=document.createElement('span');s.style.setProperty('--i',q);s.textContent=tx[q];w.appendChild(s)}
+ c.classList.add('wait');
+ var im=c.querySelectorAll('img'),n=im.length,done=0;
+ function go(){if(done)return;done=1;c.classList.remove('wait');c.classList.add('go');rain()}
+ function one(){if(--n<=0)setTimeout(go,120)}
+ for(var i=0;i<im.length;i++){if(im[i].complete)one();else{im[i].addEventListener('load',one);im[i].addEventListener('error',one)}}
+ setTimeout(go,3000);
+ function rain(){
+  if(!matchMedia('(min-width:1024px) and (hover:hover)').matches)return;
+  var cn=navigator.connection;if(cn&&(cn.saveData||/2g/.test(cn.effectiveType||'')))return;
+  var src=(document.documentElement.lang==='en'?'../':'')+'images/cine-rain.mp4',back=c.querySelector('.cine-back'),shade=c.querySelector('.cine-shade'),a=0,seen=1,v=[];
+  for(var k=0;k<2;k++){var e=document.createElement('video');e.className='cine-rain';e.muted=true;e.playsInline=true;e.preload='auto';e.setAttribute('muted','');e.setAttribute('playsinline','');e.setAttribute('aria-hidden','true');e.src=src;back.insertBefore(e,shade);v.push(e)}
+  function start(j){var e=v[j];try{e.currentTime=0}catch(x){}var p=e.play();if(p&&p.catch)p.catch(function(){});e.classList.add('on')}
+  v.forEach(function(e,j){e.addEventListener('timeupdate',function(){if(j!==a||!seen||e.currentTime<2.85)return;var o=v[a];a=1-a;start(a);o.classList.remove('on');setTimeout(function(){if(o!==v[a])o.pause()},800)})});
+  v[0].addEventListener('canplay',function f(){v[0].removeEventListener('canplay',f);start(0)});
+  if('IntersectionObserver' in window)new IntersectionObserver(function(es){seen=es[0].isIntersecting;var e=v[a];if(!e.classList.contains('on'))return;if(seen){var p=e.play();if(p&&p.catch)p.catch(function(){})}else e.pause()}).observe(c);
+ }
+})();
+</script>
+ <span id="mula"></span>
  <section class="hero">
   <canvas class="fx" id="fx" aria-hidden="true"></canvas>
   <div class="wrap">
