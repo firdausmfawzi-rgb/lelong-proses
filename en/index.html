@@ -807,7 +807,7 @@ footer a{white-space:nowrap}
     <ul class="ticks">
      <li><svg class="ic" width="24" height="24" aria-hidden="true"><use href="#i-check"/></svg><span>Updated every day</span></li>
      <li><svg class="ic" width="24" height="24" aria-hidden="true"><use href="#i-check"/></svg><span>POS, arrears and auction date information in one place</span></li>
-     <li><svg class="ic" width="24" height="24" aria-hidden="true"><use href="#i-check"/></svg><span>Free 7-day access: press the button above to get the code, or <a href="https://wa.me/60196522361?text=Premium" target="_blank" rel="noopener">WhatsApp me with the code “Premium”</a>.</span></li>
+     <li><svg class="ic" width="24" height="24" aria-hidden="true"><use href="#i-check"/></svg><span>Free VIP access for 1 month: press the button above to get the code, or <a href="https://wa.me/60196522361?text=VIP" target="_blank" rel="noopener">WhatsApp me with the code “VIP”</a>.</span></li>
     </ul>
     <div class="tiles" id="tiles" hidden>
      <div class="tile" id="tile-bmv" hidden><b class="num" id="t-bmv"></b><span>units 30% or more below market value</span></div>
@@ -826,7 +826,7 @@ footer a{white-space:nowrap}
   <div class="pm-box">
    <div class="pm-ico" aria-hidden="true"><svg class="ic" width="24" height="24" aria-hidden="true"><use href="#i-check"/></svg></div>
    <h2 id="pm-h">Congratulations!</h2>
-   <p class="pm-p">You have received a free Premium access code for <b id="pm-days">7</b> days.</p>
+   <p class="pm-p">You have received a free <span id="pm-plan">VIP</span> access code for <b id="pm-days">30</b> days.</p>
    <div class="pm-code"><code id="pm-code">Getting your code ready…</code></div>
    <p class="pm-exp small" id="pm-exp"></p>
    <button class="btn btn-gold pm-copy" type="button" id="pm-copy" disabled>Copy the code</button>
@@ -856,7 +856,7 @@ footer a{white-space:nowrap}
   months:['January','February','March','April','May','June','July','August','September','October','November','December'],
   topics:'Parts',steps:'Ten steps',step:'Step',prev:'Previous',next:'Next',done:'See the latest auction property list',stepNext:'Go to step {n}',stepDone:'See the full example in ringgit',
   prog:'{a}/{b} parts read',modeAll:'Show all parts on one page',modeTopic:'Back to one part per screen',
-  lines:['Bank auction property, explained step by step', 'Six parts, from the key words to auction day', 'Pick a part below and read one at a time', 'A Premium code waits for you at the end'],
+  lines:['Bank auction property, explained step by step', 'Six parts, from the key words to auction day', 'Pick a part below and read one at a time', 'A free VIP code waits for you at the end'],
   lineN:'Checking the list: {n} units open for bidding today'};
  var BULAN=T.months;
  var RM=!!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches),IO='IntersectionObserver' in window;
@@ -1031,7 +1031,7 @@ footer a{white-space:nowrap}
   var ctl=window.AbortController?new AbortController():null,tm=setTimeout(function(){if(ctl)ctl.abort()},8000);
   fetch('https://agent.lelongbidgroup.com/api/proses-code',{cache:'no-store',signal:ctl?ctl.signal:undefined}).then(function(r){return r.ok?r.json():null}).then(function(j){clearTimeout(tm);
    if(!j||!j.code){location.href=CLIENT;return}
-   code=String(j.code);$('pm-code').textContent=code;if(j.days)$('pm-days').textContent=String(j.days);if(j.expires)$('pm-exp').textContent=P.until.replace('{d}',nice(j.expires));
+   code=String(j.code);$('pm-code').textContent=code;if(j.days)$('pm-days').textContent=String(j.days);$('pm-plan').textContent=j.plan==='sip'?'VIP':'Premium';if(j.expires)$('pm-exp').textContent=P.until.replace('{d}',nice(j.expires));
    cp.disabled=false;try{cp.focus()}catch(e){}}).catch(function(){location.href=CLIENT})});
 })();
 </script>
