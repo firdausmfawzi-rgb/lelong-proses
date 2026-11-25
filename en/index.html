@@ -340,6 +340,12 @@ body.all .pager{display:none}
 .cta .big{display:flex;flex-direction:column;align-items:stretch;gap:10px;margin:22px 0 8px}
 .cta .btn-gold{font-size:1.12rem;min-height:62px;text-align:center}
 .cta .btn-gold .ic{width:1.3em;height:1.3em}
+/* 26/11/2026 Jay: the list button calls for a tap: bigger, a breathing gold glow and an arrow that nudges forward */
+.cta .btn-gold{font-size:1.2rem;font-weight:800;min-height:70px;border-width:2px;animation:ctaGlow 2.6s ease-in-out infinite}
+.cta .btn-gold .cta-go{display:inline-block;margin-left:2px;font-size:1.3em;line-height:1;animation:ctaNudge 1.6s ease-in-out infinite}
+@keyframes ctaGlow{0%,100%{box-shadow:0 0 0 1px rgba(226,191,74,.35),0 10px 28px -10px rgba(226,191,74,.75)}50%{box-shadow:0 0 0 4px rgba(243,215,120,.35),0 0 34px 4px rgba(243,215,120,.55),0 14px 40px -8px rgba(226,191,74,.95)}}
+@keyframes ctaNudge{0%,100%{transform:translateX(0)}50%{transform:translateX(5px)}}
+@media (prefers-reduced-motion:reduce){.cta .btn-gold,.cta .btn-gold .cta-go{animation:none}}
 .cta .small{color:rgba(255,255,255,.74);font-size:.9rem;text-align:center;margin:0}
 .tiles{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin-top:20px}
 .tile{background:rgba(255,255,255,.07);border:1px solid rgba(125,211,252,.25);border-radius:14px;padding:12px 14px}
@@ -475,6 +481,9 @@ body.pm-open{overflow:hidden}
 .money td{text-align:right;font-weight:700;font-variant-numeric:tabular-nums;width:42%}
 .money td span{white-space:nowrap}
 .money tfoot th,.money tfoot td{border-bottom:0;border-top:2px solid var(--gold);background:rgba(226,191,74,.16);font-weight:700;font-size:1.24rem}
+/* 26/11/2026 Jay: under the total, the cash to have ready when buying with a 90% loan */
+.money tfoot tr.cash th,.money tfoot tr.cash td{border-top:1px dashed var(--gold);background:rgba(34,197,94,.14);font-size:1.12rem}
+.money tfoot tr.cash small{display:block;font-weight:500;font-size:.82rem;opacity:.85}
 .fn{font-size:1.02rem;color:var(--muted)}
 .sched tbody th{width:38%}
 .when{display:flex;align-items:center;gap:12px;font-family:var(--display);font-weight:700;font-size:1.22rem;line-height:1.25}
@@ -630,7 +639,8 @@ footer a{white-space:nowrap}
     <figure class="vid"><a class="vid-play" href="https://www.youtube.com/watch?v=bvrJiOuBoLs" target="_blank" rel="noopener" data-yt="bvrJiOuBoLs" aria-label="Play video: when there is more than one bidder"><img src="https://i.ytimg.com/vi/bvrJiOuBoLs/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="vid-btn" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4.5v15L19.5 12z"/></svg></span></a><figcaption><b>When there is more than one bidder</b></figcaption></figure>
     <figure class="vid"><a class="vid-play" href="https://www.youtube.com/watch?v=ZDIH_5o--Ow" target="_blank" rel="noopener" data-yt="ZDIH_5o--Ow" aria-label="Play video: when you win as the only bidder"><img src="https://i.ytimg.com/vi/ZDIH_5o--Ow/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="vid-btn" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4.5v15L19.5 12z"/></svg></span></a><figcaption><b>When you win as the only bidder</b></figcaption></figure>
    </div></div>
-   <p class="sub">Many people hear “auction property” and at once think: cheap, but difficult and risky. In fact, the process is not as complicated as it seems, as long as you understand the steps before you bid. This guide is written in plain language, specially for first-time buyers.</p>
+   <p class="sub">Many people hear “auction property” and at once think: cheap, but difficult and risky. In fact, the process is not as complicated as it seems, as long as you understand the steps before you bid.</p>
+   <p class="sub">This guide is written in plain language, specially for first-time buyers.</p>
    <p class="hnote">Note: This guide is general information, not legal or financial advice.</p>
    <div class="btns">
     <a class="btn btn-gold" href="#istilah"><svg class="ic" width="24" height="24" aria-hidden="true"><use href="#i-arrow"/></svg>Start reading part 1</a>
@@ -690,7 +700,7 @@ footer a{white-space:nowrap}
    <p>Because of two big hurdles:</p>
    <ol class="nums">
     <li><div>The 10% deposit must be ready on auction day, as a banker’s cheque.</div></li>
-    <li><div>The loan must be approved. If it is not approved after you win, the deposit can be forfeited.</div></li>
+    <li><div>You cannot see inside an auction house. Only after winning the auction can the successful bidder enter the house.</div></li>
    </ol>
    <div class="tip"><svg class="ic" width="24" height="24" aria-hidden="true"><use href="#i-bulb"/></svg><div>Auction property is a <b>gold mine for investors</b>. Those who dare to learn the process get the chance to buy a home below the market price.</div></div>
   </div>
@@ -715,7 +725,8 @@ footer a{white-space:nowrap}
      <tr><th scope="row">Legal fees and stamp duty (loan + transfer)</th><td><span>RM8,000 –</span> <span>RM15,000</span></td></tr>
      <tr><th scope="row">Renovation / repairs</th><td><span>RM5,000 –</span> <span>RM10,000</span></td></tr>
     </tbody>
-    <tfoot><tr><th scope="row">Estimated total</th><td><span>RM330,000+</span></td></tr></tfoot>
+    <tfoot><tr><th scope="row">Estimated total</th><td><span>RM330,000+</span></td></tr>
+     <tr class="cash"><th scope="row">Estimated cash to have ready<small>If you buy with a 90% loan (RM330,000 &minus; RM270,000)</small></th><td><span>RM60,000+</span></td></tr></tfoot>
    </table>
    <p class="fn">*Part of the arrears (for example quit rent, assessment tax and strata maintenance fees) can usually be claimed back through the bank. Check with your agent.</p>
    <div class="note gold"><svg class="ic" width="24" height="24" aria-hidden="true"><use href="#i-bulb"/></svg><div><b>The lesson</b>Budget from this estimate, not from the reserve price alone.</div></div>
@@ -751,11 +762,11 @@ footer a{white-space:nowrap}
    <ol class="nums">
     <li><div><b>The deposit is forfeited</b>If the loan is not approved, or you pull out after winning.</div></li>
     <li><div><b>The home is “not as described”</b>Its real condition is not the same as the advert. View it from outside and read the POS carefully.</div></li>
-    <li><div><b>A tenant or occupant refuses to leave</b>You may need to go through a court order (an extra cost). Check whether the home is “vacant” or “occupied” before you bid.</div></li>
+    <li><div><b>A tenant or the owner is still living in the house.</b>Check whether the home is “vacant” or “occupied” before you bid. Your agent can help handle the eviction through the proper procedure.</div></li>
     <li><div><b>A caveat or a title dispute</b>Do a title search at the Land Office first.</div></li>
     <li><div><b>Large arrears</b>Check first whether the arrears can be claimed back. Do not assume the bank will pay everything back.</div></li>
    </ol>
-   <div class="note ok"><svg class="ic" width="24" height="24" aria-hidden="true"><use href="#i-shield"/></svg><div>All of this can be managed IF you do the checks before you bid, not after. An A to Z (end-to-end) service exists to handle these checks on your behalf.</div></div>
+   <div class="note ok"><svg class="ic" width="24" height="24" aria-hidden="true"><use href="#i-shield"/></svg><div>All of this can be managed IF you do the checks before you bid, not after. An A to Z (end-to-end) service exists to handle these checks on your behalf. Please check with your appointed agent.</div></div>
   </div>
  </section>
 
@@ -790,7 +801,7 @@ footer a{white-space:nowrap}
     <h2>Looking for the latest auction properties?</h2>
     <p class="lead">This guide gives you the process. Now you need a list of auction properties that are still active, complete with the reserve price, the auction date and area information.</p>
     <div class="big">
-     <a class="btn btn-gold" id="cta" href="https://client.lelongbidgroup.com/" target="_blank" rel="noopener"><svg class="ic" width="24" height="24" aria-hidden="true"><use href="#i-house"/></svg><span id="cta-count">See the latest auction property list</span></a>
+     <a class="btn btn-gold" id="cta" href="https://client.lelongbidgroup.com/" target="_blank" rel="noopener"><svg class="ic" width="24" height="24" aria-hidden="true"><use href="#i-house"/></svg><span id="cta-count">See the latest auction property list</span><span class="cta-go" aria-hidden="true">&rarr;</span></a>
      <p class="small" id="cta-note">A list for all of Malaysia. Pick your state and budget.</p>
     </div>
     <ul class="ticks">

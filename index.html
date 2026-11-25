@@ -340,6 +340,12 @@ body.all .pager{display:none}
 .cta .big{display:flex;flex-direction:column;align-items:stretch;gap:10px;margin:22px 0 8px}
 .cta .btn-gold{font-size:1.12rem;min-height:62px;text-align:center}
 .cta .btn-gold .ic{width:1.3em;height:1.3em}
+/* 26/11/2026 Jay: the list button calls for a tap: bigger, a breathing gold glow and an arrow that nudges forward */
+.cta .btn-gold{font-size:1.2rem;font-weight:800;min-height:70px;border-width:2px;animation:ctaGlow 2.6s ease-in-out infinite}
+.cta .btn-gold .cta-go{display:inline-block;margin-left:2px;font-size:1.3em;line-height:1;animation:ctaNudge 1.6s ease-in-out infinite}
+@keyframes ctaGlow{0%,100%{box-shadow:0 0 0 1px rgba(226,191,74,.35),0 10px 28px -10px rgba(226,191,74,.75)}50%{box-shadow:0 0 0 4px rgba(243,215,120,.35),0 0 34px 4px rgba(243,215,120,.55),0 14px 40px -8px rgba(226,191,74,.95)}}
+@keyframes ctaNudge{0%,100%{transform:translateX(0)}50%{transform:translateX(5px)}}
+@media (prefers-reduced-motion:reduce){.cta .btn-gold,.cta .btn-gold .cta-go{animation:none}}
 .cta .small{color:rgba(255,255,255,.74);font-size:.9rem;text-align:center;margin:0}
 .tiles{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin-top:20px}
 .tile{background:rgba(255,255,255,.07);border:1px solid rgba(125,211,252,.25);border-radius:14px;padding:12px 14px}
@@ -475,6 +481,9 @@ body.pm-open{overflow:hidden}
 .money td{text-align:right;font-weight:700;font-variant-numeric:tabular-nums;width:42%}
 .money td span{white-space:nowrap}
 .money tfoot th,.money tfoot td{border-bottom:0;border-top:2px solid var(--gold);background:rgba(226,191,74,.16);font-weight:700;font-size:1.24rem}
+/* 26/11/2026 Jay: under the total, the cash to have ready when buying with a 90% loan */
+.money tfoot tr.cash th,.money tfoot tr.cash td{border-top:1px dashed var(--gold);background:rgba(34,197,94,.14);font-size:1.12rem}
+.money tfoot tr.cash small{display:block;font-weight:500;font-size:.82rem;opacity:.85}
 .fn{font-size:1.02rem;color:var(--muted)}
 .sched tbody th{width:38%}
 .when{display:flex;align-items:center;gap:12px;font-family:var(--display);font-weight:700;font-size:1.22rem;line-height:1.25}
@@ -630,7 +639,8 @@ footer a{white-space:nowrap}
     <figure class="vid"><a class="vid-play" href="https://www.youtube.com/watch?v=bvrJiOuBoLs" target="_blank" rel="noopener" data-yt="bvrJiOuBoLs" aria-label="Main video: jika ada lebih daripada seorang pembida"><img src="https://i.ytimg.com/vi/bvrJiOuBoLs/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="vid-btn" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4.5v15L19.5 12z"/></svg></span></a><figcaption><b>Jika ada lebih daripada seorang pembida</b></figcaption></figure>
     <figure class="vid"><a class="vid-play" href="https://www.youtube.com/watch?v=ZDIH_5o--Ow" target="_blank" rel="noopener" data-yt="ZDIH_5o--Ow" aria-label="Main video: jika anda menang sebagai pembida tunggal"><img src="https://i.ytimg.com/vi/ZDIH_5o--Ow/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="vid-btn" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4.5v15L19.5 12z"/></svg></span></a><figcaption><b>Jika anda menang sebagai pembida tunggal</b></figcaption></figure>
    </div></div>
-   <p class="sub">Ramai orang dengar “rumah lelong” dan terus fikir: murah, tetapi susah dan berisiko. Sebenarnya, proses ini tidak serumit yang disangka, asalkan anda faham langkah-langkahnya sebelum membida. Panduan ini ditulis dalam bahasa mudah, khas untuk pembeli kali pertama.</p>
+   <p class="sub">Ramai orang dengar “rumah lelong” dan terus fikir: murah, tetapi susah dan berisiko. Sebenarnya, proses ini tidak serumit yang disangka, asalkan anda faham langkah-langkahnya sebelum membida.</p>
+   <p class="sub">Panduan ini ditulis dalam bahasa mudah, khas untuk pembeli kali pertama.</p>
    <p class="hnote">Nota: Panduan ini ialah maklumat umum, bukan nasihat guaman atau kewangan.</p>
    <div class="btns">
     <a class="btn btn-gold" href="#istilah"><svg class="ic" width="24" height="24" aria-hidden="true"><use href="#i-arrow"/></svg>Mula baca bahagian 1</a>
@@ -690,7 +700,7 @@ footer a{white-space:nowrap}
    <p>Sebab ada dua halangan besar:</p>
    <ol class="nums">
     <li><div>Deposit 10% mesti sedia pada hari lelong, dalam bentuk cek jurubank (banker’s cheque).</div></li>
-    <li><div>Pinjaman mesti lulus. Kalau tidak lulus selepas menang, deposit boleh hangus.</div></li>
+    <li><div>Rumah lelong tak boleh tengok keadaan dalam rumah. Lepas menang lelong baru pembida yang berjaya boleh masuk rumah.</div></li>
    </ol>
    <div class="tip"><svg class="ic" width="24" height="24" aria-hidden="true"><use href="#i-bulb"/></svg><div>Rumah lelong menjadi <b>lubuk emas pelabur</b>. Mereka yang berani belajar prosesnya berpeluang membeli rumah lebih murah daripada harga pasaran.</div></div>
   </div>
@@ -715,7 +725,8 @@ footer a{white-space:nowrap}
      <tr><th scope="row">Yuran guaman dan duti setem (pinjaman + pindah milik)</th><td><span>RM8,000 –</span> <span>RM15,000</span></td></tr>
      <tr><th scope="row">Renovasi / baik pulih</th><td><span>RM5,000 –</span> <span>RM10,000</span></td></tr>
     </tbody>
-    <tfoot><tr><th scope="row">Anggaran keseluruhan</th><td><span>RM330,000+</span></td></tr></tfoot>
+    <tfoot><tr><th scope="row">Anggaran keseluruhan</th><td><span>RM330,000+</span></td></tr>
+     <tr class="cash"><th scope="row">Anggaran tunai yang perlu disediakan<small>Jika beli dengan pinjaman 90% (RM330,000 &minus; RM270,000)</small></th><td><span>RM60,000+</span></td></tr></tfoot>
    </table>
    <p class="fn">*Sebahagian tunggakan (contohnya cukai tanah, cukai taksiran dan yuran penyelenggaraan strata) selalunya boleh dituntut semula melalui bank. Rujuk ejen anda.</p>
    <div class="note gold"><svg class="ic" width="24" height="24" aria-hidden="true"><use href="#i-bulb"/></svg><div><b>Moral</b>Buat bajet berdasarkan anggaran ini, bukan harga rizab sahaja.</div></div>
@@ -751,11 +762,11 @@ footer a{white-space:nowrap}
    <ol class="nums">
     <li><div><b>Deposit hangus</b>Kalau pinjaman tidak lulus, atau anda tarik diri selepas menang.</div></li>
     <li><div><b>Rumah “bercanggah dengan makluman”</b>Keadaan sebenar tidak sama dengan iklan. Lawat rumah dari luar dan baca POS dengan teliti.</div></li>
-    <li><div><b>Penyewa atau penghuni tidak mahu keluar</b>Mungkin perlu melalui proses perintah mahkamah (kos tambahan). Semak sama ada rumah “kosong” atau “berpenghuni” sebelum membida.</div></li>
+    <li><div><b>Rumah ada penyewa atau pemilik masih duduk.</b>Semak sama ada rumah “kosong” atau “berpenghuni” sebelum membida. Agent boleh bantu untuk menguruskan eviction mengikut prosedur yang betul.</div></li>
     <li><div><b>Kaveat atau pertikaian hakmilik</b>Buat carian hakmilik di Pejabat Tanah dahulu.</div></li>
     <li><div><b>Tunggakan besar</b>Semak dahulu sama ada tunggakan itu boleh dituntut semula. Jangan anggap bank akan membayar balik semuanya.</div></li>
    </ol>
-   <div class="note ok"><svg class="ic" width="24" height="24" aria-hidden="true"><use href="#i-shield"/></svg><div>Semua ini boleh diurus KALAU anda buat semakan sebelum membida, bukan selepas. Servis A hingga Z (end-to-end) wujud untuk menguruskan semakan ini bagi pihak anda.</div></div>
+   <div class="note ok"><svg class="ic" width="24" height="24" aria-hidden="true"><use href="#i-shield"/></svg><div>Semua ini boleh diurus KALAU anda buat semakan sebelum membida, bukan selepas. Servis A hingga Z (end-to-end) wujud untuk menguruskan semakan ini bagi pihak anda. Sila semak dengan agent yang dilantik.</div></div>
   </div>
  </section>
 
@@ -790,7 +801,7 @@ footer a{white-space:nowrap}
     <h2>Nak cari rumah lelong terkini?</h2>
     <p class="lead">Panduan ini memberi anda prosesnya. Sekarang anda perlukan senarai rumah lelong yang masih aktif, lengkap dengan harga rizab, tarikh lelong dan maklumat kawasan.</p>
     <div class="big">
-     <a class="btn btn-gold" id="cta" href="https://client.lelongbidgroup.com/" target="_blank" rel="noopener"><svg class="ic" width="24" height="24" aria-hidden="true"><use href="#i-house"/></svg><span id="cta-count">Lihat senarai rumah lelong terkini</span></a>
+     <a class="btn btn-gold" id="cta" href="https://client.lelongbidgroup.com/" target="_blank" rel="noopener"><svg class="ic" width="24" height="24" aria-hidden="true"><use href="#i-house"/></svg><span id="cta-count">Lihat senarai rumah lelong terkini</span><span class="cta-go" aria-hidden="true">&rarr;</span></a>
      <p class="small" id="cta-note">Senarai untuk seluruh Malaysia. Pilih negeri dan bajet anda.</p>
     </div>
     <ul class="ticks">
